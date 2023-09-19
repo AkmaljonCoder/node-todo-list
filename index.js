@@ -7,7 +7,7 @@ const port = 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
-// app.use(morgan('combined'));
+app.use(morgan('combined'));
 
 const data = [];
 const wData = [];
