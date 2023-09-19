@@ -1,0 +1,27 @@
+<%- include('header.ejs') %>
+
+    <form action="/" method="post" class="container">
+        <div class="date">
+            <h2><%= weekday %></h2>
+            <p><%= month %> <%= day %>, <%= year %></p>
+        </div>
+
+        <div class="inputs">
+            <input placeholder="Add Task" autocomplete="off" required name="task" type="text">
+            <input type="submit" value="Add">
+        </div>
+
+        <% if(data.length === 0) { %>
+            <h2 class="none">There is no task...</h2>
+        <% } else { %>
+            <% data.forEach( item => { %>
+                <div class="task">
+                    <input class="check" type="checkbox">
+                    <label class="cross"><%= item %></label>
+                </div>
+            <% }) %>
+        <% } %>
+    </form>
+
+</body>
+</html>
